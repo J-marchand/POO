@@ -4,30 +4,51 @@ class Personnage{
     
 
     /// PUBLIC ///
-    public $vie = 80;
-    public $atk = 20;  
-    public $name;
+    private $vie = 80;
+    private $atk = 20;
+    private $name;
 
     // Attribuer valeur directement en arguments avec un constructeur
+    // Public
+    /* public $name
     public function __construct($name)
     {
         $this->name = $name;
     }
+    */
 
     /// PRIVATE ///
     // private $name
-    /*
+    public function getVie()
+    {
+        return $this->vie;
+    }
+
+    public function getAtk()
+    {
+        return $this->atk;
+    }
+
     public function getName()
     {
         return $this->name;
     }
-    */
+
+
 
     /// DIE ///
     // Savoir si le personnage est mort
     public function die()
     {
         return $this->vie <= 0;
+    }
+
+    private function noNull()
+    {
+        if($this->vie < 0)
+        {
+            $this->vie = 0;
+        }
     }
     
 
@@ -66,5 +87,6 @@ class Personnage{
         // $cible = Defensseur
 
         $cible->vie -= $this->atk;
+        $cible->noNull();
     }
 }

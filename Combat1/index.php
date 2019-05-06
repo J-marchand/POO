@@ -7,10 +7,12 @@ $perso1 = new Personnage(/* Donner une valeur avec un argument*/"Merlin");
 //  $perso1->name = "Merlin";
 
 
-$perso2 = new Personnage(/* Donner une valeur avec un argument*/"Harry");
+$perso2 = new Personnage(/* Donner une valeur avec un argument*/ "Harry");
 //  Donner une valeur
 //  $perso2->name = "Harry";
-$perso2->vie = 20;
+$perso2->getVie(100);
+$perso2->getName('Harry');
+$perso2->getAtk(20);
 
 
 /// METHODE ET ATTRIBUT ///
@@ -49,8 +51,11 @@ if($perso2->die())
 }
 
 
-//  Dump des valeurs du personnage 
-    var_dump($perso1);
-    var_dump($perso2);
+//  Dump des valeurs du personnage
+echo '<pre>';
 
+var_dump($perso1);
+var_dump($perso2);
+
+echo '</pre>';
 ?>
